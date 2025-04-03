@@ -8,7 +8,7 @@ import { escape, unescape } from '../../utils';
 export const toValue = (node: Node, filter?: (node: Node) => false | void) => {
 	if (Text.isText(node)) {
 		const { text } = node;
-		return unescape(text)
+		return escape(text)
 			.replace(/\u00a0/g, ' ')
 			.replace(/\u200b/g, '');
 	} else if (Element.isElement(node)) {
